@@ -36,7 +36,7 @@ namespace AMQP {
      * @param cb 
      * @param options 
      */
-    export async function consume(uri: string, cb: (msg: ConsumeMessage | null) => void, options?: Options.Consume) {
+    export async function consume(uri: string, cb: (msg: ConsumeMessage | null, chan: amqp.Channel) => void, options?: Options.Consume) {
         let u = url.parse(uri)
         let n = q.parse(u.query)
         //@ts-ignore
@@ -44,7 +44,9 @@ namespace AMQP {
         uri = u.protocol + '//' + u.auth + '@' + u.host + u.pathname
         let chan = await get_amqp(uri)
         //@ts-ignore
-        chan.consume(channel, cb, options)
+        chan.consume(channel, (msg) => {
+            cb(msg, chan)
+        }, options)
     }
     /**
      * 发送amqp消息

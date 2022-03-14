@@ -1,0 +1,21 @@
+{
+  "name": "@ctsy/amqp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/c-tsy/amqp",
+  "author": "castleiMac <castle@tansuyun.cn>",
+  "license": "MIT",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.s",
+    "README.md",
+    "yarn.lock"
+  ],
+  "dependencies": {
+    "amqplib": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2"
+  }
+}

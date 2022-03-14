@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "incremental": true, /* 增量编译 提高编译速度*/
+    // 与 Vue 的浏览器支持保持一致
+    "target": "esnext",
+    // 这可以对 `this` 上的数据属性进行更严格的推断
+    "strict": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // "outDir": "dist",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

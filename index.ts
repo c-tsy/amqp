@@ -1,7 +1,6 @@
 import * as amqp from 'amqplib'
 import * as url from 'url'
 import * as q from 'querystring'
-import { channel } from 'diagnostics_channel';
 import { ConsumeMessage, Options } from 'amqplib';
 // import stomp from 'stompjs'
 

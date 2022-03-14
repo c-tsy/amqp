@@ -39,12 +39,10 @@ namespace AMQP {
     export async function consume(uri: string, cb: (msg: ConsumeMessage | null, chan: amqp.Channel) => void, options?: Options.Consume) {
         let u = url.parse(uri)
         let n = q.parse(u.query)
-        //@ts-ignore
-        channel = n.channel;
         uri = u.protocol + '//' + u.auth + '@' + u.host + u.pathname
         let chan = await get_amqp(uri)
         //@ts-ignore
-        chan.consume(channel, (msg) => {
+        chan.consume(n.channel, (msg) => {
             cb(msg, chan)
         }, options)
     }
